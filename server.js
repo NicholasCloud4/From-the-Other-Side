@@ -2,6 +2,11 @@ import http from 'node:http';
 
 const PORT = 8000
 
+
+const __dirname = import.meta.dirname
+console.log(__dirname)
+
+
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html');
@@ -13,18 +18,5 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
-/*
-Challenge: 
 
-1.Set up a server that serves the string 
-    '<html><h1>The server is working</h1></html>'.
-    
-    What should the content type be? 
-    What status code should you send?
-
-2. Listen on port 8000 and log a connection message to the console.
-
-3. Open the browser to see your first served HTML.
-
-*/
 
